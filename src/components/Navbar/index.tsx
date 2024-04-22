@@ -38,7 +38,7 @@ export default function Navbar() {
 				</div>
 
 				{/* Right-side (Links) */}
-				<div className={twMerge("flex flex-col lg:flex-row gap-y-4 gap-x-12 justify-end order-3 lg:order-2 mt-4 lg:mt-0 text-center lg:text-left col-span-full lg:col-span-1", (isCollapsed && "hidden"))}>
+				<div className={twMerge("lg:flex flex-col lg:flex-row gap-y-4 gap-x-12 justify-end order-3 lg:order-2 mt-4 lg:mt-0 text-center lg:text-left col-span-full lg:col-span-1", (isCollapsed ? "hidden" : "flex"))}>
 					<NavbarLink href="/">Início</NavbarLink>
 					<NavbarLink href="#about-me">Sobre</NavbarLink>
 					<NavbarLink href="#projects">Projetos</NavbarLink>
