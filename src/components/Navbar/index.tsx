@@ -27,7 +27,7 @@ export default function Navbar() {
 
 	return (
 		<nav className="fixed z-50 w-full lg:px-6 lg:py-4">
-			<div className={twMerge("grid grid-cols-2 px-6 py-6 lg:px-12 lg:py-3 items-center transition-all lg:rounded-lg", ((isScrolled || !isCollapsed) && "bg-slate-800/30 backdrop-blur-lg"))}>
+			<div className={twMerge("grid grid-cols-2 px-6 py-6 lg:px-12 lg:py-3 items-center transition-all lg:rounded-xl", ((isScrolled || !isCollapsed) && "bg-neutral-800/40 backdrop-blur-sm"))}>
 				{/* Left-side (Logo) */}
 				<div className="text-lg font-code font-semibold tracking-widest order-1">
 					{"<"}Rafa.
@@ -42,7 +42,6 @@ export default function Navbar() {
 					<NavbarLink href="/">Início</NavbarLink>
 					<NavbarLink href="#about-me">Sobre</NavbarLink>
 					<NavbarLink href="#projects">Projetos</NavbarLink>
-					<NavbarLink href="https://heyyshop.com.br">Loja</NavbarLink>
 					<NavbarLink href="https://github.com/HeyyCzer">Github</NavbarLink>
 				</div>
 

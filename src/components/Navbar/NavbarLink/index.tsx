@@ -10,7 +10,7 @@ export default function NavbarLink({
 	return (
 		<Link
 			href={href}
-			className="uppercase text-sm text-white hover:text-cyan-500 transition-colors font-medium"
+			className="uppercase text-sm text-white hover:text-gray-500 transition-colors font-medium"
 		>
 			{children}
 		</Link>

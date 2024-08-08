@@ -5,13 +5,12 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import Link from "next/link";
 config.autoAddCss = false;
 //
 
 export const metadata: Metadata = {
-	title: "Rafael Pereira - Desenvolvedor",
-	description: "Meu nome é Rafael, sou desenvolvedor full-stack. Tenho experiência com React, Node.js, Java e mais.",
+	title: "Rafael Pereira | Software Developer",
+	description: "Sou Rafael, um desenvolvedor de software e este é o meu site pessoal. Aqui você pode encontrar informações sobre mim, meus projetos e como entrar em contato comigo.",
 };
 
 export default function RootLayout({
@@ -21,9 +20,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt">
-			<body>
+			<body className="dark">
 				<Navbar />
-
 				{children}
 			</body>
 		</html>
