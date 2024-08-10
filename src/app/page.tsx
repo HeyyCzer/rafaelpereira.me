@@ -11,8 +11,12 @@ export default function Home() {
 		<main className="h-screen">
 			<Hero />
 
-			<section id="#about-me" className="max-w-[1024px] mx-auto px-24 pb-12">
-				<h1 className="text-3xl font-semibold text-center mb-8">Sobre mim</h1>
+			<section className="relative scroll-m-24 max-w-[1024px] mx-auto px-24 pb-12">
+				{/* Anchor */}
+				<a id="about-me" className="absolute -top-24" />
+
+				{/* Content */}
+				<h1 id="about-me" className="text-3xl font-semibold text-center mb-8">Sobre mim</h1>
 				<p className="text-neutral-200 tracking-wide font-light text-justify">
 					Me chamo <span className="font-medium">Rafael Pereira</span>, sou desenvolvedor de software e completamente apaixonado por tecnologia.
 					No momento, tenho <span className="font-medium">{age} anos</span> e estou cursando <span className="font-medium">Ciência da Computação</span>.
@@ -26,7 +30,11 @@ export default function Home() {
 				</p>
 			</section>
 
-			<section className="max-w-[1024px] mx-auto px-24 pb-12">
+			<section className="relative max-w-screen-xl mx-auto px-24 pb-12">
+				{/* Anchor */}
+				<a id="projects" className="absolute -top-24" />
+
+				{/* Content */}
 				<h1 className="text-center text-3xl font-semibold text-white">Projetos</h1>
 
 				<ProjectsGrid />

@@ -1,7 +1,4 @@
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { twMerge } from "tailwind-merge";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { HoverEffect } from "../ui/card-hover-effect";
 
 interface Project {
 	name: string;
@@ -17,34 +14,18 @@ const getProjects = async (): Promise<Project[]> => {
 	return data;
 }
 
-const list = [1, 2, 5, 6, 9, 10, 13, 14];
-
 export async function ProjectsGrid() {
 	const projects = await getProjects();
 
 	return (
-		<BentoGrid className="max-w-4xl mx-auto">
-			{projects.map((project, i) => (
-				<BentoGridItem
-					key={i}
-					title={project.name}
-					description={project.description}
-					header={(
-						<div className="min-h-[120px] max-h-[120px] h-[120px] w-auto flex flex-1 rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 relative overflow-hidden">
-							{project.preview && (
-								// eslint-disable-next-line @next/next/no-img-element
-								<img
-									src={`https://cms.heyyczer.com/assets/${project.preview}`}
-									alt={project.name}
-									className="h-full w-full rounded-xl object-cover"
-								/>
-							)}
-						</div>
-					)}
-					icon={<FontAwesomeIcon icon={faCode} className="text-neutral-500" />}
-					className={twMerge(list.includes(i) && "md:col-span-2", "overflow-hidden justify-start")}
-				/>
-			))}
-		</BentoGrid>
+		<HoverEffect items={
+			projects.map((project: Project) => ({
+				title: project.name,
+				description: project.description,
+				stack: project.stack,
+				preview: project.preview,
+				link: project.demo_url
+			}))
+		} />
 	);
 }
