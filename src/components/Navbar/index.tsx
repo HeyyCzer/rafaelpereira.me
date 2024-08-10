@@ -32,7 +32,7 @@ export default function Navbar() {
 				{/* Left-side (Logo) */}
 				<div className="text-base font-semibold tracking-widest order-1">
 					rafael
-					<span className="text-neutral-400">pereira</span>
+					<span className="text-cyan-400">pereira</span>
 					.me
 				</div>
 
@@ -41,6 +41,7 @@ export default function Navbar() {
 					<NavbarLink href="/">Início</NavbarLink>
 					<NavbarLink href="#about-me">Sobre</NavbarLink>
 					<NavbarLink href="#projects">Projetos</NavbarLink>
+					<NavbarLink href="#contact">Contato</NavbarLink>
 					<NavbarLink isExternal href="https://github.com/HeyyCzer">
 						<FontAwesomeIcon icon={faGithub} className="text-xl" />
 					</NavbarLink>

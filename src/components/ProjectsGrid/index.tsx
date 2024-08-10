@@ -5,7 +5,8 @@ interface Project {
 	description: string;
 	stack: string[];
 	preview: string;
-	demo_url: string;
+	demo_url?: string;
+	github_url?: string;
 }
 
 const getProjects = async (): Promise<Project[]> => {
@@ -24,7 +25,8 @@ export async function ProjectsGrid() {
 				description: project.description,
 				stack: project.stack,
 				preview: project.preview,
-				link: project.demo_url
+				link: project.demo_url,
+				githubRepo: project.github_url
 			}))
 		} />
 	);

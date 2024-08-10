@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 // Fix FontAwesome Icons showing up as giant icons
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -23,6 +24,7 @@ export default function RootLayout({
 			<body className="dark">
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

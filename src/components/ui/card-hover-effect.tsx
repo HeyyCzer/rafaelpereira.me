@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode, faExternalLink } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
@@ -15,8 +16,9 @@ export const HoverEffect = ({
 	items: {
 		title: string;
 		description: string;
-		link: string;
 		preview: string;
+		link?: string;
+		githubRepo?: string;
 	}[];
 	className?: string;
 }) => {
@@ -25,15 +27,17 @@ export const HoverEffect = ({
 	return (
 		<div
 			className={cn(
-				"grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+				"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
 				className
 			)}
 		>
 			{items.map((item, idx) => (
 				<Link
-					href={item?.link}
-					key={item?.link}
+					href={(item.link || item.githubRepo || "#")}
+					key={(item.link || item.githubRepo || idx)}
 					className="relative group  block p-2 h-full w-full"
+					target="_blank"
+					passHref
 					onMouseEnter={() => setHoveredIndex(idx)}
 					onMouseLeave={() => setHoveredIndex(null)}
 				>
@@ -60,6 +64,7 @@ export const HoverEffect = ({
 								item.preview ? (
 									<div className="rounded-lg w-full mt-2 overflow-hidden">
 										<Image
+											loading="lazy"
 											src={`https://cms.heyyczer.com/assets/${item.preview}`}
 											alt="Project preview"
 											className="w-full aspect-video"
@@ -77,8 +82,15 @@ export const HoverEffect = ({
 							<CardDescription>{item.description}</CardDescription>
 						</div>
 
-						<div className="mt-4">
-							<FontAwesomeIcon icon={faExternalLink} className="text-zinc-100" />
+						<div className="mt-4 flex gap-x-2 items-center">
+							{item.link && (
+								<FontAwesomeIcon icon={faExternalLink} className="text-zinc-100" />
+							)}
+							{item.githubRepo && (
+								<Link href={item.githubRepo} target="_blank">
+									<FontAwesomeIcon icon={faGithub} className="text-zinc-100" />
+								</Link>
+							)}
 						</div>
 					</Card>
 				</Link>
