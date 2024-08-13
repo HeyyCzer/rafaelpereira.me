@@ -80,12 +80,12 @@ export default function Home() {
 
 							<FontAwesomeIcon icon={faExternalLink} className="text-xs text-neutral-500" />
 						</Link>
-						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href={"https://instagram.com/heyy.pereira"} target="_blank">
+						<div className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800">
 							<div className="flex items-center gap-x-2">
 								<FontAwesomeIcon icon={faDiscord} className="text-xl text-cyan-400" />
 								@heyyczer
 							</div>
-						</Link>
+						</div>
 					</div>
 				</div>
 			</section>
