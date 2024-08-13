@@ -26,11 +26,11 @@ export function Hero() {
 
 	return (
 		<div className="h-[40rem] w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
-			<div className="z-10 max-w-2xl mx-auto p-4">
+			<div className="z-10 max-w-2xl mx-auto py-4 px-8">
 				<div className="min-w-fit mb-4">
 					<Image src={profileImage} alt="Rafael Pereira" className="rounded-full aspect-square h-24 w-auto mx-auto outline-dashed outline-2 outline-offset-2 outline-white/40" />
 				</div>
-				<h1 className="relative z-10 text-lg md:text-7xl">
+				<h1 className="relative z-10">
 					<TypewriterEffect words={words} />
 				</h1>
 				<p className="text-neutral-400 max-w-lg mx-auto my-2 text-base text-center relative z-10 tracking-wide">
