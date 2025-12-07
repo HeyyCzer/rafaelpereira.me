@@ -10,7 +10,9 @@ interface Project {
 }
 
 const getProjects = async (): Promise<Project[]> => {
-	const response = await fetch("https://cms.heyyczer.com/items/portfolio_projects");
+	const response = await fetch("https://cms.heyyczer.com/items/portfolio_projects", {
+		cache: "force-cache",
+	});
 	const { data } = await response.json();
 	return data;
 }
