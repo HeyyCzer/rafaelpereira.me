@@ -9,36 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspree/react": "^2.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/pro-regular-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@sentry/nextjs": "8.49.0",
-    "@spotlightjs/spotlight": "^2.3.1",
+    "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.24",
-    "lucide-react": "^0.424.0",
     "luxon": "^3.5.0",
-    "next": "14.2.25",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "motion": "^12.0.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sharp": "^0.33.4",
-    "tailwind-merge": "^2.4.0",
-    "tailwind-variants": "^0.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.14.15",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "autoprefixer": "^10.4.20",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "babel-plugin-react-compiler": "^19.0.0-beta-e993439-20241218",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.1.4",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.9",
+    "eslint-config-next": "^15.1.0",
+    "tailwindcss": "^4.0.0",
     "typescript": "^5.5.4"
   }
 }

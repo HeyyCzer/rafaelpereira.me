@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode, faExternalLink } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export const HoverEffect = ({
 	}[];
 	className?: string;
 }) => {
-	let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
 	return (
 		<div
@@ -35,7 +35,7 @@ export const HoverEffect = ({
 				<Link
 					href={(item.link || item.githubRepo || "#")}
 					key={(item.link || item.githubRepo || idx)}
-					className="relative group  block p-2 h-full w-full"
+					className="relative group block p-2 h-full w-full"
 					target="_blank"
 					passHref
 					onMouseEnter={() => setHoveredIndex(idx)}
@@ -44,7 +44,7 @@ export const HoverEffect = ({
 					<AnimatePresence>
 						{hoveredIndex === idx && (
 							<motion.span
-								className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-neutral-800/[0.8] block  rounded-3xl"
+								className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-neutral-800/80 block rounded-3xl"
 								layoutId="hoverBackground"
 								initial={{ opacity: 0 }}
 								animate={{
@@ -58,7 +58,7 @@ export const HoverEffect = ({
 							/>
 						)}
 					</AnimatePresence>
-					<Card>
+					<HoverCard>
 						<div>
 							{
 								item.preview ? (
@@ -73,13 +73,13 @@ export const HoverEffect = ({
 										/>
 									</div>
 								) : (
-									<div className="rounded-lg w-full aspect-video flex items-center justify-center bg-gradient-to-tr from-neutral-800 to-neutral-700">
+									<div className="rounded-lg w-full aspect-video flex items-center justify-center bg-linear-to-tr from-neutral-800 to-neutral-700">
 										<FontAwesomeIcon icon={faCode} className="text-2xl" />
 									</div>
 								)
 							}
-							<CardTitle>{item.title}</CardTitle>
-							<CardDescription>{item.description}</CardDescription>
+							<HoverCardTitle>{item.title}</HoverCardTitle>
+							<HoverCardDescription>{item.description}</HoverCardDescription>
 						</div>
 
 						<div className="mt-4 flex gap-x-2 items-center">
@@ -92,14 +92,14 @@ export const HoverEffect = ({
 								</Link>
 							)}
 						</div>
-					</Card>
+					</HoverCard>
 				</Link>
 			))}
 		</div>
 	);
 };
 
-export const Card = ({
+export const HoverCard = ({
 	className,
 	children,
 }: {
@@ -109,7 +109,7 @@ export const Card = ({
 	return (
 		<div
 			className={cn(
-				"rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-white/40 relative z-20",
+				"rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/20 group-hover:border-white/40 relative z-20",
 				className
 			)}
 		>
@@ -119,7 +119,8 @@ export const Card = ({
 		</div>
 	);
 };
-export const CardTitle = ({
+
+export const HoverCardTitle = ({
 	className,
 	children,
 }: {
@@ -132,7 +133,8 @@ export const CardTitle = ({
 		</h4>
 	);
 };
-export const CardDescription = ({
+
+export const HoverCardDescription = ({
 	className,
 	children,
 }: {

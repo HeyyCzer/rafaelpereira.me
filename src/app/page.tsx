@@ -1,4 +1,3 @@
-import ContactForm from "@/components/Contact";
 import { Hero } from "@/components/Hero";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
 import Title from "@/components/Title";
@@ -7,17 +6,15 @@ import { faExternalLink } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DateTime } from "luxon";
 import Link from "next/link";
-import { useMemo } from "react";
 
 export default function Home() {
-	const age = useMemo(() => (
-		Math.floor(DateTime.now().diff(DateTime.fromFormat("2005-06-14", "yyyy-MM-dd")).as("years"))
-	), []);
+	const age = Math.floor(DateTime.now().diff(DateTime.fromFormat("2005-06-14", "yyyy-MM-dd")).as("years"));
+
 	return (
 		<main className="min-h-screen">
 			<Hero />
 
-			<section className="relative scroll-m-24 max-w-[1024px] mx-auto px-8 lg:px-24 pb-12">
+			<section className="relative scroll-m-24 max-w-5xl mx-auto px-8 lg:px-24 pb-12">
 				{/* Anchor */}
 				<a id="about-me" className="absolute -top-24" />
 
@@ -39,7 +36,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="relative max-w-screen-xl mx-auto px-8 lg:px-24 pb-12">
+			<section className="relative max-w-7xl mx-auto px-8 lg:px-24 pb-12">
 				{/* Anchor */}
 				<a id="projects" className="absolute -top-24" />
 
@@ -49,7 +46,7 @@ export default function Home() {
 				<ProjectsGrid />
 			</section>
 
-			<section className="relative max-w-[1024px] mx-auto px-8 lg:px-24 pb-12">
+			<section className="relative max-w-5xl mx-auto px-8 lg:px-24 pb-12">
 				{/* Anchor */}
 				<a id="contact" className="absolute -top-24" />
 
@@ -57,14 +54,12 @@ export default function Home() {
 				<Title>Contato</Title>
 
 				<p className="text-neutral-200 tracking-wide font-light text-center lg:text-justify mt-4">
-					Se você gostou do meu trabalho e quer me contratar para desenvolver um projeto, ou simplesmente quer conversar, entre em contato comigo através do formulário abaixo.
+					Se você gostou do meu trabalho e quer me contratar para desenvolver um projeto, ou simplesmente quer conversar, entre em contato comigo através das redes sociais abaixo.
 				</p>
 
 				<div className="flex flex-col gap-y-2 mx-auto max-w-xl my-8">
-					<ContactForm />
-					
 					<div className="w-full grid grid-cols-1 lg:grid-cols-3 lg:gap-x-2 lg:gap-y-0 gap-y-2">
-						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href={"https://github.com/heyy.pereira"} target="_blank">
+						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href="https://github.com/HeyyCzer" target="_blank">
 							<div className="flex items-center gap-x-2">
 								<FontAwesomeIcon icon={faGithub} className="text-xl text-cyan-400" />
 								@heyyczer
@@ -72,7 +67,7 @@ export default function Home() {
 
 							<FontAwesomeIcon icon={faExternalLink} className="text-xs text-neutral-500" />
 						</Link>
-						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href={"https://instagram.com/heyy.pereira"} target="_blank">
+						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href="https://instagram.com/heyy.pereira" target="_blank">
 							<div className="flex items-center gap-x-2">
 								<FontAwesomeIcon icon={faInstagram} className="text-xl text-cyan-400" />
 								@heyy.pereira
@@ -80,12 +75,14 @@ export default function Home() {
 
 							<FontAwesomeIcon icon={faExternalLink} className="text-xs text-neutral-500" />
 						</Link>
-						<div className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800">
+						<Link className="w-full flex items-center justify-between gap-x-2 py-1.5 px-2 rounded-lg bg-neutral-800" href="https://discord.com/users/297439129090785280" target="_blank">
 							<div className="flex items-center gap-x-2">
 								<FontAwesomeIcon icon={faDiscord} className="text-xl text-cyan-400" />
 								@heyyczer
 							</div>
-						</div>
+
+							<FontAwesomeIcon icon={faExternalLink} className="text-xs text-neutral-500" />
+						</Link>
 					</div>
 				</div>
 			</section>
