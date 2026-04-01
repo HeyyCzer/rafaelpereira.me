@@ -21,12 +21,12 @@ export function Navbar() {
 
 	return (
 		<header
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-					? "bg-background/90 backdrop-blur-lg border-b border-border"
-					: ""
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 lg:px-20 py-5 ${scrolled
+				? "bg-background/90 backdrop-blur-lg border-b border-border"
+				: ""
 				}`}
 		>
-			<nav className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-5 flex items-center justify-between">
+			<nav className="max-w-6xl mx-auto flex items-center justify-between">
 				<a
 					href="/"
 					className="font-display text-2xl font-extrabold text-foreground hover:text-primary transition-colors"
